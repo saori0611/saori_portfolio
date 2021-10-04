@@ -1,5 +1,10 @@
 <?php
   include '../action/user-action.php';
+
+  if($_SESSION['status'] !== 'A'){
+    header('Location: ../index.php');
+    die;
+  }
   $user_id = $_GET['user_id'];
   $user_details = $user->displaySpecificUser($user_id);
 ?>
@@ -16,8 +21,9 @@
 <body>
   <div class="container">
     <div class="card mx-auto w-50 my-5 border border-0">
+      <div class="card-header bg-white border-0">
       <h2 class="text-center">Update user</h2>
-    </div>
+      </div>
 
     <div class="card-body">
       <form action="../action/user-action.php" method="post">

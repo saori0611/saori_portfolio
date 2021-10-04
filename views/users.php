@@ -1,5 +1,10 @@
 <?php
   include "../action/user-action.php";
+
+  if($_SESSION['status'] !== 'A'){
+    header('Location: ../index.php');
+    die;
+  }
   $user_list = $user->displayUsers();
 ?>
 

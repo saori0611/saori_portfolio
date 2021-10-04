@@ -1,5 +1,11 @@
 <?php
  include "../action/rental-action.php";
+
+  if($_SESSION['status'] !== 'A'){
+    header('Location: ../index.php');
+    die;
+  }
+
  $rental_list = $rental->displayRentals();
 ?>
 

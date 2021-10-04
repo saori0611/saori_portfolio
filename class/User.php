@@ -40,6 +40,7 @@
             $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['status'] = $row['status'];
             $_SESSION['id'] = $row['account_id'];
+            $_SESSION['user_id'] = $row['user_id'];
 
             if($row['status']=='A'){
               header("Location: ../views/admin.php");

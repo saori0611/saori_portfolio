@@ -34,9 +34,22 @@
                         <li class="nav-item"><a class="nav-link" href="#acommodation">Acommodation</a></li>
                         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about_us">About us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="views/reservation.php">Resavation</a></li>
-                        <li class="nav-item"><a class="nav-link bg-primary" href="">Login <?php echo $_SESSION['username'];?></a></li>
-                        <h2 class="display-8"></h2>
+                        <li class="nav-item"><a class="nav-link" href="views/reservation.php">Reservation</a></li>
+                        <?php
+                        if(empty($_SESSION['username'])){
+                        ?>
+                        <li class="nav-item"><a class="nav-link bg-primary" href="views/login.php">Login</a></li> 
+                        <?php
+                        }else{
+                        ?>
+                           <li class="nav-item"><a class="nav-link bg-primary" href=""><?php echo $_SESSION['username']?></a></li>
+
+                           <li class="nav-item"><a class="nav-link bg-info" href="logout.php">Logout</a></li> 
+                        <?php
+                        }
+                        ?>
+                       
+                        
                     </ul>
                 </div>
             </div>
@@ -46,7 +59,7 @@
             <div class="container">
                 <div class="masthead-subheading">Welcome To Forest camp!</div>
                 <div class="masthead-heading text-uppercase">We'll invite you to a amazing camp</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Resavation</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="views/reservation.php">Reservation</a>
             </div>
         </header>
          <!-- Our facility's feature -->

@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if($_SESSION['status'] !== 'A'){
+    header('Location: ../index.php');
+    die;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

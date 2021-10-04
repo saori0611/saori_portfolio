@@ -1,5 +1,10 @@
 <?php
   include '../action/rental-action.php';
+
+  if($_SESSION['status'] !== 'A'){
+    header('Location: ../index.php');
+    die;
+  }
   $rental_id = $_GET['rental_id'];
   $rental_details = $rental->displaySpecificRental($rental_id);
 ?>
